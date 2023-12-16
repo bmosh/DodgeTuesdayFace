@@ -1,17 +1,19 @@
 import Toybox.Application;
-import Toybox.Graphics;
-import Toybox.Lang;
-import Toybox.System;
-import Toybox.WatchUi;
+using Toybox.Graphics as Gfx;
+using Toybox.Lang as Lang;
+using Toybox.System as Sys;
+using Toybox.WatchUi as Ui;
 
-class TestFaceView extends WatchUi.WatchFace {
+using Toybox.Time.Gregorian as Date;
+
+class TestFaceView extends Ui.WatchFace {
 
     function initialize() {
         WatchFace.initialize();
     }
 
     // Load your resources here
-    function onLayout(dc as Dc) as Void {
+    function onLayout(dc) as Void {
         setLayout(Rez.Layouts.WatchFace(dc));
     }
 
@@ -22,27 +24,12 @@ class TestFaceView extends WatchUi.WatchFace {
     }
 
     // Update the view
-    function onUpdate(dc as Dc) as Void {
+    function onUpdate(dc) as Void {
         // Get the current time and format it correctly
-        var timeFormat = "$1$:$2$";
-        var clockTime = System.getClockTime();
-        var hours = clockTime.hour;
-        if (!System.getDeviceSettings().is24Hour) {
-            if (hours > 12) {
-                hours = hours - 12;
-            }
-        } else {
-            if (getApp().getProperty("UseMilitaryFormat")) {
-                timeFormat = "$1$$2$";
-                hours = hours.format("%02d");
-            }
-        }
-        var timeString = Lang.format(timeFormat, [hours, clockTime.min.format("%02d")]);
+        setClockDisplay();
+        setDateDisplay();
+        setDodgeTuesdayText();
 
-        // Update the view
-        var view = View.findDrawableById("TimeLabel") as Text;
-        view.setColor(getApp().getProperty("ForegroundColor") as Number);
-        view.setText(timeString);
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
@@ -60,6 +47,40 @@ class TestFaceView extends WatchUi.WatchFace {
 
     // Terminate any active timers and prepare for slow updates.
     function onEnterSleep() as Void {
+    }
+    
+    hidden function setClockDisplay() as Void {
+        var clockTime = Sys.getClockTime();
+        var timeString = Lang.format("$1$:$2$", [clockTime.hour, clockTime.min.format("%02d")]);
+	
+	// This	will break if it doesn't match your drawable's id!
+        var view = View.findDrawableById("TimeDisplay");
+	
+        view.setText(timeString);
+    }
+
+     hidden function setDateDisplay() as Void {
+        var curTime = Time.now();
+        var date = Date.info(now, Time.FORMAT_LONG);
+
+        var dateString = Lang.format("$1$ $2$, $3$", [date.month, date.day, date.year]);
+        var dateDisplay = View.findDrawableById("DateDisplay");
+
+        dateDisplay.setText(dateString);
+    }
+
+    hidden function setDodgeTuesdayText() as Void {
+        var tueText = "";
+        var date = Date.info(now, Time.FORMAT_LONG);
+
+        if (true) {
+            tueText = "DODGE TUESDAY!!!";
+        } else {
+            tueText = "not Dodge Tuesday :((((";
+        }
+
+        var view = View.findDrawableById("DodgeTuesdayText");
+        view.setText(tueText);
     }
 
 }

@@ -1,0 +1,66 @@
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 1; ]
+import Toybox.Application;
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 2; ]
+import Toybox.Lang;
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 3; ]
+import Toybox.WatchUi;
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 5; ]
+class TestFaceApp extends Application.AppBase{
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 5; ]
+    <init> {
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 5; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 7; ]
+    function initialize() as Void {
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceApp_mc_7_26_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc" 8 8 ]
+        %tmp.2 = getv ? :AppBase;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceApp_mc_7_26_stop:
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 12; ]
+    function onStart(state as Dictionary or Null) as Void {
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 16; ]
+    function onStop(state as Dictionary or Null) as Void {
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 20; ]
+    function getInitialView() as Array<Views or InputDelegates> or Null {
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceApp_mc_20_65_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc" 21 8 ]
+        %tmp.1 = newa Array<Views or InputDelegates> 1;
+        %tmp.5 = getv ? :TestFaceView;
+        %tmp.2 = newc %tmp.5 ();
+        %tmp.6 = dup %tmp.1;
+        %tmp.7 = aputv %tmp.6 0 %tmp.2;
+        ret %tmp.7;
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceApp_mc_20_65_stop:
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 25; ]
+    function onSettingsChanged() as Void {
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceApp_mc_25_41_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc" 26 8 ]
+        %tmp.1 = getm $.Toybox.WatchUi;
+        %tmp.2 = getv function %tmp.1 :requestUpdate;
+        invoke %tmp.1 %tmp.2();
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceApp_mc_25_41_stop:
+    }
+}
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 31; ]
+function getApp() as TestFaceApp {
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceApp_mc_31_33_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc" 32 4 ]
+    %tmp.1 = getm $.Toybox.Application;
+    %tmp.2 = getv function %tmp.1 :getApp;
+    %tmp.3 = invoke %tmp.1 %tmp.2();
+    %tmp.4 = as %tmp.3 TestFaceApp;
+    ret %tmp.4;
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceApp_mc_31_33_stop:
+}
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceApp.mc"; @line = 1; ]
+<init> {
+}

@@ -1,0 +1,237 @@
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 1; ]
+import Toybox.Application;
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 2; ]
+using Toybox.Graphics as :Gfx;
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 3; ]
+using Toybox.Lang as :Lang;
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 4; ]
+using Toybox.System as :Sys;
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 5; ]
+using Toybox.WatchUi as :Ui;
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 7; ]
+using Toybox.Time.Gregorian as :Date;
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 9; ]
+class TestFaceView extends Ui.WatchFace{
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 9; ]
+    <init> {
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 9; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 11; ]
+    function initialize() as Void {
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_11_26_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 12 8 ]
+        %tmp.2 = getv ? :WatchFace;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_11_26_stop:
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 16; ]
+    function onLayout(dc) as Void {
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_16_34_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 17 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        %tmp.4 = getv ? :Rez;
+        %tmp.5 = getv %tmp.4 :Layouts;
+        %tmp.6 = getv function %tmp.5 :WatchFace;
+        %tmp.8 = lgetv %dc;
+        %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
+        invoke %tmp.1 %tmp.2(%tmp.9);
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_16_34_stop:
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 23; ]
+    function onShow() as Void {
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 27; ]
+    function onUpdate(dc) as Void {
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_27_34_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 29 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :setClockDisplay;
+        invoke %tmp.1 %tmp.2();
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 30 8 ]
+        %tmp.3 = self;
+        %tmp.4 = getv function %tmp.3 :setDateDisplay;
+        invoke %tmp.3 %tmp.4();
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 31 8 ]
+        %tmp.5 = self;
+        %tmp.6 = getv function %tmp.5 :setDodgeTuesdayText;
+        invoke %tmp.5 %tmp.6();
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 35 8 ]
+        %tmp.8 = getv ? :View;
+        %tmp.9 = getv function %tmp.8 :onUpdate;
+        %tmp.11 = lgetv %dc;
+        invoke %tmp.8 %tmp.9(%tmp.11);
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_27_34_stop:
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 41; ]
+    function onHide() as Void {
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 45; ]
+    function onExitSleep() as Void {
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 49; ]
+    function onEnterSleep() as Void {
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 52; ]
+    protected
+    function setClockDisplay() as Void {
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_52_46_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 53 8 ]
+        [ "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_52_46_start" "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_52_46_stop" ]
+        %clockTime.1 = local;
+        %tmp.1 = getm $.Toybox.System;
+        %tmp.2 = getv function %tmp.1 :getClockTime;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %clockTime.1 %tmp.3;
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 54 8 ]
+        [ "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_52_46_start" "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_52_46_stop" ]
+        %timeString.2 = local;
+        %tmp.4 = getm $.Toybox.Lang;
+        %tmp.5 = getv function %tmp.4 :format;
+        %tmp.6 = "$1$:$2$";
+        %tmp.7 = newa 2;
+        %tmp.8 = lgetv %clockTime.1;
+        %tmp.9 = getv %tmp.8 :hour;
+        %tmp.10 = dup %tmp.7;
+        %tmp.11 = aputv %tmp.10 0 %tmp.9;
+        %tmp.12 = lgetv %clockTime.1;
+        %tmp.13 = getv %tmp.12 :min;
+        %tmp.14 = getv function %tmp.13 :format;
+        %tmp.15 = "%02d";
+        %tmp.16 = invoke %tmp.13 %tmp.14(%tmp.15);
+        %tmp.17 = dup %tmp.11;
+        %tmp.18 = aputv %tmp.17 1 %tmp.16;
+        %tmp.19 = invoke %tmp.4 %tmp.5(%tmp.6, %tmp.18);
+        lputv %timeString.2 %tmp.19;
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 57 8 ]
+        [ "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_52_46_start" "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_52_46_stop" ]
+        %view.3 = local;
+        %tmp.21 = getv ? :View;
+        %tmp.22 = getv function %tmp.21 :findDrawableById;
+        %tmp.23 = "TimeDisplay";
+        %tmp.24 = invoke %tmp.21 %tmp.22(%tmp.23);
+        lputv %view.3 %tmp.24;
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 59 8 ]
+        %tmp.25 = lgetv %view.3;
+        %tmp.26 = getv function %tmp.25 :setText;
+        %tmp.28 = lgetv %timeString.2;
+        invoke %tmp.25 %tmp.26(%tmp.28);
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_52_46_stop:
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 62; ]
+    protected
+    function setDateDisplay() as Void {
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_62_46_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 63 8 ]
+        [ "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_62_46_start" "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_62_46_stop" ]
+        %curTime.1 = local;
+        %tmp.2 = getv ? :Time;
+        %tmp.3 = getv function %tmp.2 :now;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        lputv %curTime.1 %tmp.4;
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 64 8 ]
+        [ "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_62_46_start" "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_62_46_stop" ]
+        %date.2 = local;
+        %tmp.5 = getm $.Toybox.Time.Gregorian;
+        %tmp.6 = getv function %tmp.5 :info;
+        %tmp.8 = getv ? :now;
+        %tmp.10 = getv ? :Time;
+        %tmp.11 = getv %tmp.10 :FORMAT_LONG;
+        %tmp.12 = invoke %tmp.5 %tmp.6(%tmp.8, %tmp.11);
+        lputv %date.2 %tmp.12;
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 66 8 ]
+        [ "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_62_46_start" "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_62_46_stop" ]
+        %dateString.3 = local;
+        %tmp.13 = getm $.Toybox.Lang;
+        %tmp.14 = getv function %tmp.13 :format;
+        %tmp.15 = "$1$ $2$, $3$";
+        %tmp.16 = newa 3;
+        %tmp.17 = lgetv %date.2;
+        %tmp.18 = getv %tmp.17 :month;
+        %tmp.19 = dup %tmp.16;
+        %tmp.20 = aputv %tmp.19 0 %tmp.18;
+        %tmp.21 = lgetv %date.2;
+        %tmp.22 = getv %tmp.21 :day;
+        %tmp.23 = dup %tmp.20;
+        %tmp.24 = aputv %tmp.23 1 %tmp.22;
+        %tmp.25 = lgetv %date.2;
+        %tmp.26 = getv %tmp.25 :year;
+        %tmp.27 = dup %tmp.24;
+        %tmp.28 = aputv %tmp.27 2 %tmp.26;
+        %tmp.29 = invoke %tmp.13 %tmp.14(%tmp.15, %tmp.28);
+        lputv %dateString.3 %tmp.29;
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 67 8 ]
+        [ "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_62_46_start" "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_62_46_stop" ]
+        %dateDisplay.4 = local;
+        %tmp.31 = getv ? :View;
+        %tmp.32 = getv function %tmp.31 :findDrawableById;
+        %tmp.33 = "DateDisplay";
+        %tmp.34 = invoke %tmp.31 %tmp.32(%tmp.33);
+        lputv %dateDisplay.4 %tmp.34;
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 69 8 ]
+        %tmp.35 = lgetv %dateDisplay.4;
+        %tmp.36 = getv function %tmp.35 :setText;
+        %tmp.38 = lgetv %dateString.3;
+        invoke %tmp.35 %tmp.36(%tmp.38);
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_62_46_stop:
+    }
+    [ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 72; ]
+    protected
+    function setDodgeTuesdayText() as Void {
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_72_50_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 73 8 ]
+        [ "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_72_50_start" "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_72_50_stop" ]
+        %tueText.1 = local;
+        %tmp.1 = "";
+        lputv %tueText.1 %tmp.1;
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 74 8 ]
+        [ "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_72_50_start" "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_72_50_stop" ]
+        %date.2 = local;
+        %tmp.2 = getm $.Toybox.Time.Gregorian;
+        %tmp.3 = getv function %tmp.2 :info;
+        %tmp.5 = getv ? :now;
+        %tmp.7 = getv ? :Time;
+        %tmp.8 = getv %tmp.7 :FORMAT_LONG;
+        %tmp.9 = invoke %tmp.2 %tmp.3(%tmp.5, %tmp.8);
+        lputv %date.2 %tmp.9;
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 76 8 ]
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_76_8_if_stmt:
+        %tmp.10 = true;
+        bf %tmp.10 @_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_76_8_if_false;
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_76_8_if_true:
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_76_18_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 77 12 ]
+        %tmp.11 = "DODGE TUESDAY!!!";
+        lputv %tueText.1 %tmp.11;
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_76_18_stop:
+        goto @_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_76_8_if_end;
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_76_8_if_false:
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_78_15_start:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 79 12 ]
+        %tmp.12 = "not Dodge Tuesday :((((";
+        lputv %tueText.1 %tmp.12;
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_78_15_stop:
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_76_8_if_end:
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 82 8 ]
+        [ "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_72_50_start" "_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_72_50_stop" ]
+        %view.3 = local;
+        %tmp.14 = getv ? :View;
+        %tmp.15 = getv function %tmp.14 :findDrawableById;
+        %tmp.16 = "DodgeTuesdayText";
+        %tmp.17 = invoke %tmp.14 %tmp.15(%tmp.16);
+        lputv %view.3 %tmp.17;
+[ "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc" 83 8 ]
+        %tmp.18 = lgetv %view.3;
+        %tmp.19 = getv function %tmp.18 :setText;
+        %tmp.21 = lgetv %tueText.1;
+        invoke %tmp.18 %tmp.19(%tmp.21);
+_Users_rob_Desktop_Personal_MonkeyC_DodgeTuesdayFace_source_TestFaceView_mc_72_50_stop:
+    }
+}
+[ @file = "/Users/rob/Desktop/Personal/MonkeyC/DodgeTuesdayFace/source/TestFaceView.mc"; @line = 1; ]
+<init> {
+}
